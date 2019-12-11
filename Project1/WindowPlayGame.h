@@ -7,14 +7,15 @@ using namespace sf;
 class WindowPlayGame
 {
 private:
-	int WIDTH = 1000;
-	int HEIGHT = 800;
+	int  WIDTH = 1366;
+	int HEIGHT = 768;
 	Font font_Score; 
 	Text text[2];
 	Font font_Speed;
 	Text speed; 
 	Text namePlayer[2]; 
 	Font font_name; 
+	int count;
 public:
 
 

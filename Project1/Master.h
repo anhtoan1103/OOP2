@@ -9,6 +9,6 @@ class Master
 public:
 	void processGame(); //Van hanh game
 private:
-	int WIDTH = 1000;
-	int HEIGHT = 800;
+	int WIDTH = 1366;
+	int HEIGHT = 768;
 };

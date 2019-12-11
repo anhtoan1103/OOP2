@@ -6,82 +6,52 @@
 //tra ve ten va so diem cua nguoi chien thang
 vector <string> WindowPlayGame::playGameOnePlayer(string name)
 {
+	RenderWindow window(VideoMode(WIDTH, HEIGHT), "Pong Game");
 	vector <string> kq;
 	
 	Ball ball(550, 400);
 
 	Event event;
-
-
-	Paddle paddle2(WIDTH/2-80 , HEIGHT-20);
+	Paddle paddle2(WIDTH/2-80 , HEIGHT-45);
 
 	font_Score.loadFromFile("OCRAEXT.TTF");
 
-	RenderWindow window(VideoMode(WIDTH, HEIGHT), "Pong Game");
-	
+	count = 0;
 	int i = 0, j = 0;
 	ball.readFile(i, j, "2.txt");
-	int count = 0;
 	for (int a = 0; a < i; a++)
 	{
 		for (int b = 0; b < j; b++)
-
 		{
-			//RectangleShape brick;
-			if ((int)arr[b + a * j] == 126)
+			if ((int)arr[b+a*j] == 126)
 			{
 				RectangleShape brick;
-				cout << "aa" << endl;
 				ball.Brick.push_back(brick);
-				ball.Brick[b + a * j].setPosition(Vector2f(50 + 42 * b, 60 + 22 * a));
-				ball.Brick[b + a * j].setSize(Vector2f(40, 20));
-				ball.Brick[b + a * j].setFillColor(Color(255, 0, 0));
-				
-				
-			}
-			else
-			if ((int)arr[b + a * j] == 32)
-			{
-				RectangleShape brick;
-				cout << "bb" << endl;
-
-				ball.Brick.push_back(brick);
-				ball.Brick[b + a * j].setPosition(Vector2f(50 + 92 * b, 60 + 22 * a));
-				ball.Brick[b + a * j].setSize(Vector2f(90, 20));
-				ball.Brick[b + a * j].setFillColor(Color(0, 0, 0));
+				ball.Brick[count].setPosition(Vector2f((WIDTH / j )*b, 60 + 22 * a));
+				ball.Brick[count].setSize(Vector2f(WIDTH/j-2, 20));
+				ball.Brick[count].setFillColor(Color::Red);
 				count++;
 			}
 			else
 			if ((int)arr[b + a * j] == 45)
 			{
 				RectangleShape brick;
-				cout << "cc" << endl;
-
 				ball.Brick.push_back(brick);
-				ball.Brick[b + a * j].setPosition(Vector2f(50 + 92 * b, 60 + 22 * a));
-				ball.Brick[b + a * j].setSize(Vector2f(90, 20));
-				ball.Brick[b + a * j].setFillColor(Color(0, 155, 0));
-			}
-			else
-			{
-				RectangleShape brick;
-				cout << "dd" << endl;
-				cout << (int)arr[b + a * j] << endl;
-				ball.Brick.push_back(brick);
-				ball.Brick[b + a * j].setPosition(Vector2f(50 + 92 * j, 60 + 22 * i));
-				ball.Brick[b + a * j].setSize(Vector2f(90, 20));
-				ball.Brick[b + a * j].setFillColor(Color(255, 0, 0));
+				ball.Brick[count].setPosition(Vector2f((WIDTH / j) * b, 60 + 22 * a));
+				ball.Brick[count].setSize(Vector2f(WIDTH / j - 2, 20));
+				ball.Brick[count].setFillColor(Color::Green);
+				count++;
 			}
 		}
 	}
-
+	cout << count;
 	text[1].setCharacterSize(100);
 	text[1].setPosition(550, 70);
 	text[1].setFont(font_Score);
 
 	font_Speed.loadFromFile("OCRAEXT.TTF");
 	speed.setFont(font_Speed);
-	speed.setPosition(800, 0);
+	speed.setPosition(768, 0);
 	
 
 	font_name.loadFromFile("OCRAEXT.ttf");
@@ -136,7 +106,7 @@ vector <string> WindowPlayGame::playGameOnePlayer(string name)
 		
 		ball.updatePosition();
 
-		//paddle2.autoMove(0, 1000, ball);
+		paddle2.autoMove(0, WIDTH, ball);
 		paddle2.update();
 
 		window.clear(Color::Black);
@@ -156,7 +126,7 @@ vector <string> WindowPlayGame::playGameOnePlayer(string name)
 
 		window.display();
 
-		if (ball.Brick.size() == count) {
+		if (ball.Brick.size() == 0) {
 			window.close();
 			kq.push_back("You are God !!!");
 			kq.push_back("Score: " + scorePlayer2);
@@ -173,7 +143,6 @@ vector <string> WindowPlayGame::playGameOnePlayer(string name)
 		{
 			window.close();
 			kq.push_back("Beat the GOD?");
-
 			kq.push_back("Score: " + scorePlayer2);
 		}
 		else if (Win == 2)
@@ -207,7 +176,7 @@ void WindowPlayGame::Winer(vector <string> name)
 	text[0].setCharacterSize(50);
 	text[0].setFont(font);
 	text[0].setString("Win the game");
-	text[0].setPosition(350, 200);
+	text[0].setPosition(550, 200);
 
 	font.loadFromFile("OCRAEXT.ttf");
 	text[1].setCharacterSize(100);
@@ -218,18 +187,18 @@ void WindowPlayGame::Winer(vector <string> name)
 	text[2].setCharacterSize(30);
 	text[2].setFont(font);
 	text[2].setString("Your " + name[1]); //score
-	text[2].setPosition(400, 350);
+	text[2].setPosition(600, 350);
 
 	font.loadFromFile("OCRAEXT.ttf");
 	text[3].setCharacterSize(30);
 	text[3].setFont(font);
 	text[3].setString("Enter to play a new game!");
-	text[3].setPosition(320, 570);
+	text[3].setPosition(520, 570);
 
 	text[4].setCharacterSize(30);
 	text[4].setFont(font);
 	text[4].setString("Esc to given!");
-	text[4].setPosition(400, 650);
+	text[4].setPosition(600, 650);
 
 	int HighScore = 0;
 	/*fstream FileHighScore;
@@ -238,7 +207,7 @@ void WindowPlayGame::Winer(vector <string> name)
 	Text A;
 	A.setString("High score: 69");
 	A.setFont(font);
-	A.setPosition(400, 420);
+	A.setPosition(600, 420);
 	A.setFillColor(Color::White);
 
 	RenderWindow window(VideoMode(WIDTH, HEIGHT), "Pong Game");

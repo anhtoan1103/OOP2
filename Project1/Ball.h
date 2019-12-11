@@ -19,7 +19,9 @@ private:
 public:
 	vector <RectangleShape> Brick;
 
-	CircleShape Gift;
+	CircleShape Gift1;
+	CircleShape Gift2;
+	CircleShape Gift3;
 public:
 
 	Ball(float initX, float initY); //Khoi tao trai banh
@@ -61,4 +63,10 @@ public:
 	void readFile(int& i, int& j, string file_name);
 
 	bool isExistBrick(Vector2f position, vector<RectangleShape> Brick);
+
+	void setItem();
+
+	void drawItem(int index, RenderWindow& window);
+
+	int drawItemOnMap(RenderWindow& window, vector<RectangleShape> Brick);
 };

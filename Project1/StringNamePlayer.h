@@ -20,6 +20,7 @@ private:
 	TextBox textbox;
 
 	Button button; //Nut bam vao de bat dau choi
+	Button button2; // Nut bam de tro ve menu
 	Texture texture; 
 	Font font;
 
@@ -27,11 +28,7 @@ public:
 
 	void setTheButtonPlay();
 
-	void setTheTextBoxTwoPlayer();
-
-	vector <string> fillNameTwoPlayer();
-
 	void setTheTextBoxOnePlayer();
 
-	string fillNameOnePlayer();
+	string fillNameOnePlayer(int &flag);
 };

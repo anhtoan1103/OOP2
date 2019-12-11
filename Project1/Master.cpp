@@ -16,7 +16,7 @@ void Master::processGame()
 	StarMenu begin;
 
 	Event event;
-
+	Button button;
 	if (beginWindow.isOpen())
 	{
 		while (beginWindow.isOpen())
@@ -45,14 +45,19 @@ void Master::processGame()
 						{
 							beginWindow.close();
 							StringNamePlayer player;
-							string kq = player.fillNameOnePlayer();
+							int flag = 0;
+							string kq = player.fillNameOnePlayer(flag);
+							if (flag)
+							{
 							WindowPlayGame playGame;
 							vector <string> winer = playGame.playGameOnePlayer(kq);
 							playGame.Winer(winer);
+							}
 							break;
 						}
 						case 1:
 						{
+							beginWindow.close();
 							ifstream file;
 							file.open("highScore.txt");
 							string name[20], score[20];
@@ -74,7 +79,7 @@ void Master::processGame()
 							background.setTexture(A);
 							A->setSmooth(true);
 							background.setPosition(Vector2f(0, 0));
-							background.setSize(Vector2f(1000, 800));
+							background.setSize(Vector2f(WIDTH, HEIGHT));
 							RenderWindow window(VideoMode(WIDTH, HEIGHT), "Pong Game");
 							font.loadFromFile("OCRAEXT.TTF");
 							for (int j = 0; j < i; j++)
