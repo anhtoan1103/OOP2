@@ -163,19 +163,19 @@ void Ball::setSpeed()
 {
 		if (vx <= 0)
 		{
-			vx = vx - 0.05;
+			vx = vx - 0.02;
 		}
 		else if (vx >= 0)
 		{
-			vx = vx + 0.05;
+			vx = vx + 0.02;
 		}
 		if (vy <= 0)
 		{
-			vy = vy - 0.05;
+			vy = vy - 0.02;
 		}
 		else if (vy >= 0)
 		{
-			vy = vy + 0.05;
+			vy = vy + 0.02;
 		}
 }
 
@@ -224,3 +224,15 @@ void Ball::readFile(int& i, int& j, string file_name)
 	
 
 }
+
+bool isExistBrick(Vector2f position, vector<RectangleShape> Brick)
+{
+	for (int i = 0; i < Brick.size(); i++) {
+		if (Brick[i].getPosition() == position) {
+			return 1;
+		}
+	}
+	return 0;
+}
+
+void drawItem();

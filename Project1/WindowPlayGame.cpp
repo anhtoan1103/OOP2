@@ -21,6 +21,7 @@ vector <string> WindowPlayGame::playGameOnePlayer(string name)
 	
 	int i = 0, j = 0;
 	ball.readFile(i, j, "2.txt");
+	int count = 0;
 	for (int a = 0; a < i; a++)
 	{
 		for (int b = 0; b < j; b++)
@@ -48,6 +49,7 @@ vector <string> WindowPlayGame::playGameOnePlayer(string name)
 				ball.Brick[b + a * j].setPosition(Vector2f(50 + 92 * b, 60 + 22 * a));
 				ball.Brick[b + a * j].setSize(Vector2f(90, 20));
 				ball.Brick[b + a * j].setFillColor(Color(0, 0, 0));
+				count++;
 			}
 			else
 			if ((int)arr[b + a * j] == 45)
@@ -131,9 +133,10 @@ vector <string> WindowPlayGame::playGameOnePlayer(string name)
 		speed.setString("SPEED: " + Speed + "%");
 
 		int Win = ball.move(WIDTH, HEIGHT, paddle2,window);
+		
 		ball.updatePosition();
 
-
+		//paddle2.autoMove(0, 1000, ball);
 		paddle2.update();
 
 		window.clear(Color::Black);
@@ -153,12 +156,24 @@ vector <string> WindowPlayGame::playGameOnePlayer(string name)
 
 		window.display();
 
-		
+		if (ball.Brick.size() == count) {
+			window.close();
+			kq.push_back("You are God !!!");
+			kq.push_back("Score: " + scorePlayer2);
+			fstream FileHighscore;
+			FileHighscore.open("highscore.txt", ios::app);
+			{
+				FileHighscore << name << " " << max_score << endl;
+			}
+			FileHighscore.close();
+			return kq;
+		}
 
 		if (Win == 1)
 		{
 			window.close();
 			kq.push_back("Beat the GOD?");
+
 			kq.push_back("Score: " + scorePlayer2);
 		}
 		else if (Win == 2)
@@ -168,6 +183,7 @@ vector <string> WindowPlayGame::playGameOnePlayer(string name)
 			kq.push_back("Score: " + scorePlayer2);
 		}
 	}
+	
 	fstream FileHighscore;
 	FileHighscore.open("highscore.txt", ios::app);
 	if (tempWin == 1) {

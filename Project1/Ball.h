@@ -60,4 +60,5 @@ public:
 
 	void readFile(int& i, int& j, string file_name);
 
+	bool isExistBrick(Vector2f position, vector<RectangleShape> Brick);
 };
