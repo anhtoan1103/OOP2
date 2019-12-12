@@ -1,13 +1,59 @@
 #include "Ball.h"
 
-
 Ball::Ball(float initX, float initY)
 {
+	srand(time(NULL));
+
+	int count = 0;
+	int i = 0, j = 0;
+	readFile(i, j, "2.txt");
+	for (int a = 0; a < i; a++)
+	{
+		for (int b = 0; b < j; b++)
+		{
+			if ((int)arr[b + a * j] == 126)
+			{
+				RectangleShape brick;
+				Brick.push_back(brick);
+				Brick[count].setPosition(Vector2f((1366 / j) * b, 60 + 22 * a));
+				Brick[count].setSize(Vector2f(1366 / j - 2, 20));
+				Brick[count].setFillColor(Color::Red);
+				count++;
+			}
+			else
+				if ((int)arr[b + a * j] == 45)
+				{
+					RectangleShape brick;
+					Brick.push_back(brick);
+					Brick[count].setPosition(Vector2f((1366 / j) * b, 60 + 22 * a));
+					Brick[count].setSize(Vector2f(1366 / j - 2, 20));
+					Brick[count].setFillColor(Color::Green);
+					count++;
+				}
+		}
+	}
 	position.x = initX;
 	position.y = initY;
 	ballShape.setRadius(10);
 	ballShape.setPosition(position);
 	ballShape.setFillColor(Color::Red);
+
+	Texture* gift1Texture = new Texture;
+	Texture* gift2Texture = new Texture;
+	Texture* gift3Texture = new Texture;
+	gift1Texture->loadFromFile("fire.png");
+	gift2Texture->loadFromFile("rock.png");
+	gift3Texture->loadFromFile("fighting.png");
+
+	Gift1.setTexture(gift1Texture);
+	Gift2.setTexture(gift2Texture);
+	Gift3.setTexture(gift3Texture);
+
+	Gift1.setRadius(20);
+	Gift2.setRadius(20);
+	Gift3.setRadius(20);
+
+	selectedItem = 1;
 }
 
 FloatRect Ball::getPosition()
@@ -65,7 +111,7 @@ void Ball::hitRightBrick()
 
 void Ball::hitLeftBrick()
 {
-	score[1]++;
+	score++;
 	vx = -vx;
 }
 
@@ -76,7 +122,7 @@ void Ball::hitTopBrick()
 
 void Ball::hitBotBrick()
 {
-	score[1]++;
+	score++;
 	vy = -vy;
 }
 
@@ -121,7 +167,43 @@ int Ball::move(int WIDTH, int HEIGHT, Paddle paddle2, RenderWindow& window)
 	}
 	if (getPosition().intersects(Gift1.getGlobalBounds()))
 	{
+		//drawItemOnMap(window, Brick);
+		//iPos++;
+		// Item co chuc nang nhan x2 diem dang co
+		score *= 2;
+		selectedItem = rand() % 3 + 1;
+		setItem();
 
+	}
+
+	if (getPosition().intersects(Gift2.getGlobalBounds()))
+	{
+		//drawItemOnMap(window, Brick);
+		//iPos++;
+		// Item co chuc nang nhan x0.5 diem dang co
+		score *= 0.5;
+		selectedItem = rand() % 3 + 1;
+		setItem();
+	}
+
+	if (getPosition().intersects(Gift3.getGlobalBounds()))
+	{
+		//drawItemOnMap(window, Brick);
+		//iPos++;
+		// Item co chuc nang tao ra 1 vat pham khong the bi pha huy
+
+		RectangleShape brick;
+		Vector2f pos,size1;
+		ImmortalBrick.push_back(brick);
+		ImmortalBrick[test].setFillColor(Color::White);
+		size1 = Brick[rand() % Brick.size()].getSize();
+		ImmortalBrick[test].setSize(size1);
+		pos=Brick[rand() % Brick.size()].getPosition();
+		ImmortalBrick[test].setPosition(pos);
+		window.draw(ImmortalBrick[test]);
+		test++;
+		selectedItem = rand() % 3 + 1;
+		setItem();
 	}
 
 	if (getPosition().top < 0)
@@ -129,7 +211,7 @@ int Ball::move(int WIDTH, int HEIGHT, Paddle paddle2, RenderWindow& window)
 		hitSides();
 	}
 
-	if (getPosition().left > WIDTH)
+	if (getPosition().left +ballShape.getRadius()*2 > WIDTH)
 	{
 		hitRight();
 	}
@@ -177,7 +259,7 @@ void Ball::setSpeed()
 
 int Ball::getScorePalyer2()
 {
-	return score[1];
+	return score;
 }
 
 void Ball::readFile(int& i, int& j, string file_name)
@@ -225,43 +307,54 @@ bool Ball::isExistBrick(Vector2f position, vector<RectangleShape> Brick)
 
 void Ball::setItem()
 {
-	Texture* gift1Texture = new Texture;
-	Texture* gift2Texture = new Texture;
-	Texture* gift3Texture = new Texture;
-	gift1Texture->loadFromFile("fire.png");
-	gift2Texture->loadFromFile("rock.png");
-	gift3Texture->loadFromFile("fighting.png");
-
-	Gift1.setTexture(gift1Texture);
-	Gift2.setTexture(gift2Texture);
-	Gift3.setTexture(gift3Texture);
-
-	Gift1.setRadius(20);
-	Gift2.setRadius(20);
-	Gift3.setRadius(20);
+	Vector2f positionGift = Vector2f(40 * (rand() % 10 + 1), 20 * (rand() % 10 + 1));
+	while (isExistBrick(positionGift, Brick)) {
+		positionGift = Vector2f(40 * (rand() % 10 + 1), 20 * (rand() % 10 + 1));
+	}
+	if (selectedItem == 1)
+	{
+		Gift1.setPosition(positionGift);
+	}
+	else if (selectedItem == 2)
+	{
+		Gift2.setPosition(positionGift);
+	}
+	else if (selectedItem == 3)
+	{
+		Gift3.setPosition(positionGift);
+	}
 }
 
-void Ball::drawItem(int index, RenderWindow& window)
+void Ball::drawItem(RenderWindow& window)
 {
-	if (index == 1)
+	//setItem();
+	if (selectedItem == 1)
 	{
 		window.draw(Gift1);
 	}
-	else if (index == 2)
+	else if (selectedItem == 2)
 	{
 		window.draw(Gift2);
 	}
-	else
+	else if (selectedItem == 3)
 	{
 		window.draw(Gift3);
 	}
 }
 
+void Ball::defaultItem(Vector2f position, RenderWindow& window)
+{
+	setItem();
+	Gift1.setPosition(position);
+	//window.draw(Gift1);
+}
+
 int Ball::drawItemOnMap(RenderWindow& window, vector<RectangleShape> Brick)
 {
-	while (!isExistBrick(Vector2f(40 * (rand() % 10 + 1), 20 * (rand() % 10 + 1)), Brick))
+	//while (!isExistBrick(Vector2f(40 * (rand() % 10 + 1), 20 * (rand() % 10 + 1)), Brick))
 	{
-		drawItem(1 + rand() % 3,window);
+		selectedItem = rand() % 3 + 1;
+		drawItem(window);
 		return 1 + rand() % 3;
 	}
 }

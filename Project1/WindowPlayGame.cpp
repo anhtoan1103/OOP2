@@ -8,7 +8,6 @@ vector <string> WindowPlayGame::playGameOnePlayer(string name)
 {
 	RenderWindow window(VideoMode(WIDTH, HEIGHT), "Pong Game");
 	vector <string> kq;
-	
 	Ball ball(550, 400);
 
 	Event event;
@@ -16,35 +15,7 @@ vector <string> WindowPlayGame::playGameOnePlayer(string name)
 
 	font_Score.loadFromFile("OCRAEXT.TTF");
 
-	count = 0;
-	int i = 0, j = 0;
-	ball.readFile(i, j, "2.txt");
-	for (int a = 0; a < i; a++)
-	{
-		for (int b = 0; b < j; b++)
-		{
-			if ((int)arr[b+a*j] == 126)
-			{
-				RectangleShape brick;
-				ball.Brick.push_back(brick);
-				ball.Brick[count].setPosition(Vector2f((WIDTH / j )*b, 60 + 22 * a));
-				ball.Brick[count].setSize(Vector2f(WIDTH/j-2, 20));
-				ball.Brick[count].setFillColor(Color::Red);
-				count++;
-			}
-			else
-			if ((int)arr[b + a * j] == 45)
-			{
-				RectangleShape brick;
-				ball.Brick.push_back(brick);
-				ball.Brick[count].setPosition(Vector2f((WIDTH / j) * b, 60 + 22 * a));
-				ball.Brick[count].setSize(Vector2f(WIDTH / j - 2, 20));
-				ball.Brick[count].setFillColor(Color::Green);
-				count++;
-			}
-		}
-	}
-	cout << count;
+	
 	text[1].setCharacterSize(100);
 	text[1].setPosition(550, 70);
 	text[1].setFont(font_Score);
@@ -63,8 +34,9 @@ vector <string> WindowPlayGame::playGameOnePlayer(string name)
 	namePlayer[1].setFont(font_name);
 
 
-	int max_score = 0; //Note
+	
 	int tempWin = 0; //Note
+	ball.defaultItem(Vector2f(150, 160), window);
 	while (window.isOpen())
 	{
 
@@ -92,6 +64,8 @@ vector <string> WindowPlayGame::playGameOnePlayer(string name)
 			window.close();
 		}
 
+
+		
 		//lay diem cua nguoi choi
 		int score2 = ball.getScorePalyer2();
 
@@ -102,7 +76,8 @@ vector <string> WindowPlayGame::playGameOnePlayer(string name)
 		string Speed = to_string(int(fabs(ball.getvx()) * 100) % 100);
 		speed.setString("SPEED: " + Speed + "%");
 
-		int Win = ball.move(WIDTH, HEIGHT, paddle2,window);
+		int Win = ball.move(WIDTH, HEIGHT, paddle2, window);
+		
 		
 		ball.updatePosition();
 
@@ -111,9 +86,15 @@ vector <string> WindowPlayGame::playGameOnePlayer(string name)
 
 		window.clear(Color::Black);
 
+		/*if (ball.iPos == 0)
+		{
+			ball.defaultItem(Vector2f(150, 160), window);
+		}*/
+		ball.drawItem(window);
 		window.draw(text[1]);
 
 		window.draw(paddle2.getShape());
+		
 
 		window.draw(namePlayer[1]);
 
@@ -133,7 +114,7 @@ vector <string> WindowPlayGame::playGameOnePlayer(string name)
 			fstream FileHighscore;
 			FileHighscore.open("highscore.txt", ios::app);
 			{
-				FileHighscore << name << " " << max_score << endl;
+				FileHighscore << name << " " << scorePlayer2 << endl;
 			}
 			FileHighscore.close();
 			return kq;
@@ -156,10 +137,10 @@ vector <string> WindowPlayGame::playGameOnePlayer(string name)
 	fstream FileHighscore;
 	FileHighscore.open("highscore.txt", ios::app);
 	if (tempWin == 1) {
-		FileHighscore << "Computer" << " " << max_score << endl;
+		FileHighscore << "Computer" << " " << ball.getScorePalyer2() << endl;
 	}
 	else {
-		FileHighscore << name << " " << max_score << endl;
+		FileHighscore << name << " " << ball.getScorePalyer2() << endl;
 	}
 	FileHighscore.close();
 	return kq;
