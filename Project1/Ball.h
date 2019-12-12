@@ -12,21 +12,18 @@ class Ball
 private:
 	Vector2f position; //Vi tri cua trai banh
 	CircleShape ballShape;
-	float vx = 0.4; //Toc do cua canh ngang
-	float vy = 0.4; //Toc do cua canh doc
+	float vx = 0.2; //Toc do cua canh ngang
+	float vy = 0.2; //Toc do cua canh doc
 	int score = 0 ; //Diem ban dau cua trai banh
 	int radius = 10; //Ban kinh cua trai bong
 public:
 	vector <RectangleShape> Brick;
 	vector <RectangleShape> ImmortalBrick;
-	int test=0;
 	CircleShape Gift1;
 	CircleShape Gift2;
 	CircleShape Gift3;
 	int selectedItem = 1;
-	int iPos = 0;
 public:
-
 	Ball(float initX, float initY); //Khoi tao trai banh
 
 	FloatRect getPosition(); //Lay vi tri trai banh
@@ -71,8 +68,8 @@ public:
 
 	void drawItem(RenderWindow& window);
 
-	int drawItemOnMap(RenderWindow& window, vector<RectangleShape> Brick);
+	bool isIntersectBrick(RectangleShape brick);
 
-	void defaultItem(Vector2f position, RenderWindow& window);
+	void setImmortalBrick();
 
 };

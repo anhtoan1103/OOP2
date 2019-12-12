@@ -8,7 +8,7 @@ class Paddle
 private:
 	Vector2f position; //Vi tri cua thanh truot
 	RectangleShape PaddleShape; //Hinh dang cua thanh
-	float PaddleSpeed = 2.8f; //Van toc ban dau cua thanh
+	float PaddleSpeed = 1.5f; //Van toc ban dau cua thanh
 	
 public:
 

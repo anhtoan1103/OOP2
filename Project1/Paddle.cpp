@@ -47,11 +47,11 @@ void Paddle::update()
 
 void Paddle::autoMove(int left, int right, Ball ball)
 {
-	if (position.x + getPosition().width > ball.getPosition().left)
+	if (position.x + (getPosition().width / 2) > ball.getPosition().left)
 	{
 		moveLeft(left);
 	}
-	else if (position.x < ball.getPosition().left)
+	else 
 	{
 		moveRight(right);
 	}

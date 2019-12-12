@@ -8,6 +8,7 @@
 #include <Windows.h>
 #include <vector>
 #include <iostream>
+#include <time.h>
 using namespace std;
 #include "Ball.h"
 #include "Button.h"

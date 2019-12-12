@@ -15,28 +15,23 @@ vector <string> WindowPlayGame::playGameOnePlayer(string name)
 
 	font_Score.loadFromFile("OCRAEXT.TTF");
 
-	
 	text[1].setCharacterSize(100);
-	text[1].setPosition(550, 70);
+	text[1].setPosition(1200, 670);
 	text[1].setFont(font_Score);
+	text[1].setCharacterSize(25);
 
 	font_Speed.loadFromFile("OCRAEXT.TTF");
 	speed.setFont(font_Speed);
-	speed.setPosition(768, 0);
-	
+	speed.setPosition(1200, 635);
+	speed.setCharacterSize(25);
 
 	font_name.loadFromFile("OCRAEXT.ttf");
-
-
-	namePlayer[1].setCharacterSize(20);
-	namePlayer[1].setPosition(550, 45);
+	namePlayer[1].setCharacterSize(25);
+	namePlayer[1].setPosition(1200, 600);
 	namePlayer[1].setString(name);
 	namePlayer[1].setFont(font_name);
 
-
-	
 	int tempWin = 0; //Note
-	ball.defaultItem(Vector2f(150, 160), window);
 	while (window.isOpen())
 	{
 
@@ -63,21 +58,18 @@ vector <string> WindowPlayGame::playGameOnePlayer(string name)
 			//khi co ai do nhan phim ESC thi tat man hinh
 			window.close();
 		}
-
-
 		
 		//lay diem cua nguoi choi
 		int score2 = ball.getScorePalyer2();
 
 		string scorePlayer2 = to_string(score2);
 
-		text[1].setString(scorePlayer2);
+		text[1].setString("Score: " + scorePlayer2);
 
 		string Speed = to_string(int(fabs(ball.getvx()) * 100) % 100);
-		speed.setString("SPEED: " + Speed + "%");
+		speed.setString("Speed: " + Speed + "%");
 
 		int Win = ball.move(WIDTH, HEIGHT, paddle2, window);
-		
 		
 		ball.updatePosition();
 
@@ -86,25 +78,17 @@ vector <string> WindowPlayGame::playGameOnePlayer(string name)
 
 		window.clear(Color::Black);
 
-		/*if (ball.iPos == 0)
-		{
-			ball.defaultItem(Vector2f(150, 160), window);
-		}*/
 		ball.drawItem(window);
-		window.draw(text[1]);
+		window.draw(ball.getShape());
 
 		window.draw(paddle2.getShape());
-		
 
+		window.draw(text[1]);
+		
 		window.draw(namePlayer[1]);
 
 		window.draw(speed);
-		for (int i = 0; i < ball.Brick.size(); i++)
-		{
-		window.draw(ball.Brick[i]);
-		}
-		window.draw(ball.getShape());
-
+		
 		window.display();
 
 		if (ball.Brick.size() == 0) {

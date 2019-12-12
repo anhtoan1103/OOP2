@@ -11,7 +11,7 @@ StarMenu::StarMenu()
 
 
 	font_title.loadFromFile("OCRAEXT.TTF");
-	title.setCharacterSize(70);
+	title.setCharacterSize(80);
 	title.setString("Ping Pong!");
 	title.setPosition(500, 80);
 	title.setFont(font_title);
@@ -19,17 +19,17 @@ StarMenu::StarMenu()
 	font.loadFromFile("OCRAEXT.TTF");
 
 	text[0].setFont(font);
-	text[0].setPosition(625, 205);
+	text[0].setPosition(625, 265);
 	text[0].setCharacterSize(30);
 	text[0].setString("> PLAY");
 
 	text[1].setFont(font);
-	text[1].setPosition(625, 283);
+	text[1].setPosition(625, 343);
 	text[1].setCharacterSize(30);
 	text[1].setString("HIGH SCORES");
 
 	text[2].setFont(font);
-	text[2].setPosition(625, 365);
+	text[2].setPosition(625, 425);
 	text[2].setCharacterSize(30);
 	text[2].setString("QUIT");
 

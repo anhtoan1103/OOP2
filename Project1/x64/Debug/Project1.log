@@ -1,105 +1,84 @@
 ﻿  Ball.cpp
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.h(15,16): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.h(16,16): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(5,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(18,58): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(18,58): warning C4244:         with
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(18,58): warning C4244:         [
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(18,58): warning C4244:             T=float
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(18,58): warning C4244:         ]
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(18,50): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(18,50): warning C4244:         with
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(18,50): warning C4244:         [
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(18,50): warning C4244:             T=float
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(18,50): warning C4244:         ]
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(19,44): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(19,44): warning C4244:         with
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(19,44): warning C4244:         [
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(19,44): warning C4244:             T=float
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(19,44): warning C4244:         ]
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(28,59): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(28,59): warning C4244:         with
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(28,59): warning C4244:         [
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(28,59): warning C4244:             T=float
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(28,59): warning C4244:         ]
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(28,51): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(28,51): warning C4244:         with
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(28,51): warning C4244:         [
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(28,51): warning C4244:             T=float
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(28,51): warning C4244:         ]
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(29,45): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(29,45): warning C4244:         with
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(29,45): warning C4244:         [
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(29,45): warning C4244:             T=float
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(29,45): warning C4244:         ]
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(184,15): warning C4244: '*=': conversion from 'double' to 'int', possible loss of data
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(243,11): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(247,11): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(251,11): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(255,11): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(278,18): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(310,62): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(310,62): warning C4244:         with
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(310,62): warning C4244:         [
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(310,62): warning C4244:             T=float
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(310,62): warning C4244:         ]
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(310,38): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(310,38): warning C4244:         with
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(310,38): warning C4244:         [
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(310,38): warning C4244:             T=float
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(310,38): warning C4244:         ]
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(312,54): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(312,54): warning C4244:         with
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(312,54): warning C4244:         [
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(312,54): warning C4244:             T=float
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(312,54): warning C4244:         ]
+c:\users\asus\source\repos\oop2\project1\ball.h(15): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\asus\source\repos\oop2\project1\ball.h(16): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\asus\source\repos\oop2\project1\ball.cpp(6): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\asus\source\repos\oop2\project1\ball.cpp(19): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\asus\source\repos\oop2\project1\ball.cpp(20): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\asus\source\repos\oop2\project1\ball.cpp(29): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\asus\source\repos\oop2\project1\ball.cpp(30): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\asus\source\repos\oop2\project1\ball.cpp(191): warning C4244: '*=': conversion from 'double' to 'int', possible loss of data
+c:\users\asus\source\repos\oop2\project1\ball.cpp(243): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\asus\source\repos\oop2\project1\ball.cpp(247): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\asus\source\repos\oop2\project1\ball.cpp(251): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\asus\source\repos\oop2\project1\ball.cpp(255): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\asus\source\repos\oop2\project1\ball.cpp(278): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\users\asus\source\repos\oop2\project1\ball.cpp(311): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\asus\source\repos\oop2\project1\ball.cpp(313): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\asus\source\repos\oop2\project1\ball.cpp(369): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\asus\source\repos\oop2\project1\ball.cpp(373): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
   Master.cpp
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(312,30): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(312,30): warning C4244:         with
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(312,30): warning C4244:         [
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(312,30): warning C4244:             T=float
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(312,30): warning C4244:         ]
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.h(15,16): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.h(16,16): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Master.cpp(82,43): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Master.cpp(82,43): warning C4244:         with
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Master.cpp(82,43): warning C4244:         [
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Master.cpp(82,43): warning C4244:             T=float
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Master.cpp(82,43): warning C4244:         ]
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Master.cpp(82,36): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Master.cpp(82,36): warning C4244:         with
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Master.cpp(82,36): warning C4244:         [
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Master.cpp(82,36): warning C4244:             T=float
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Master.cpp(82,36): warning C4244:         ]
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Master.cpp(89,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\asus\source\repos\oop2\project1\ball.h(15): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\asus\source\repos\oop2\project1\ball.h(16): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\asus\source\repos\oop2\project1\master.cpp(82): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\asus\source\repos\oop2\project1\master.cpp(89): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\asus\source\repos\oop2\project1\master.cpp(91): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   Paddle.cpp
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Master.cpp(91,68): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.h(15,16): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\asus\source\repos\oop2\project1\ball.h(15): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\asus\source\repos\oop2\project1\ball.h(16): warning C4305: 'initializing': truncation from 'double' to 'float'
   StarMenu.cpp
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.h(16,16): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.h(15,16): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\asus\source\repos\oop2\project1\ball.h(15): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\asus\source\repos\oop2\project1\ball.h(16): warning C4305: 'initializing': truncation from 'double' to 'float'
   StringNamePlayer.cpp
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.h(16,16): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.h(15,16): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.h(16,16): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\StringNamePlayer.cpp(43,37): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\StringNamePlayer.cpp(43,37): warning C4244:         with
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\StringNamePlayer.cpp(43,37): warning C4244:         [
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\StringNamePlayer.cpp(43,37): warning C4244:             T=float
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\StringNamePlayer.cpp(43,37): warning C4244:         ]
+c:\users\asus\source\repos\oop2\project1\ball.h(15): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\asus\source\repos\oop2\project1\ball.h(16): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\asus\source\repos\oop2\project1\stringnameplayer.cpp(43): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
   WindowPlayGame.cpp
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\StringNamePlayer.cpp(43,30): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\StringNamePlayer.cpp(43,30): warning C4244:         with
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\StringNamePlayer.cpp(43,30): warning C4244:         [
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\StringNamePlayer.cpp(43,30): warning C4244:             T=float
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\StringNamePlayer.cpp(43,30): warning C4244:         ]
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.h(15,16): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.h(16,16): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\WindowPlayGame.cpp(14,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\asus\source\repos\oop2\project1\ball.h(15): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\asus\source\repos\oop2\project1\ball.h(16): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\asus\source\repos\oop2\project1\windowplaygame.cpp(14): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   main.cpp
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\WindowPlayGame.cpp(14,24): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.h(15,16): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\asus\source\repos\oop2\project1\ball.h(15): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\asus\source\repos\oop2\project1\ball.h(16): warning C4305: 'initializing': truncation from 'double' to 'float'
   Generating Code...
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.h(16,16): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\Project1\Ball.cpp(237): warning C4715: 'Ball::move': not all control paths return a value
-  Project1.vcxproj -> C:\Users\toant\OneDrive\Máy tính\OOP2\OOP2\x64\Debug\Project1.exe
+c:\users\asus\source\repos\oop2\project1\ball.cpp(237): warning C4715: 'Ball::move': not all control paths return a value
+  Project1.vcxproj -> C:\Users\ASUS\source\repos\OOP2\x64\Debug\Project1.exe

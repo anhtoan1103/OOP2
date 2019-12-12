@@ -1,4 +1,5 @@
 #include "Ball.h"
+#include <time.h>
 
 Ball::Ball(float initX, float initY)
 {
@@ -49,11 +50,13 @@ Ball::Ball(float initX, float initY)
 	Gift2.setTexture(gift2Texture);
 	Gift3.setTexture(gift3Texture);
 
-	Gift1.setRadius(20);
-	Gift2.setRadius(20);
-	Gift3.setRadius(20);
+	Gift1.setRadius(25);
+	Gift2.setRadius(25);
+	Gift3.setRadius(25);
 
-	selectedItem = 1;
+	Gift2.setPosition(Vector2f(650, 450));
+
+	selectedItem = 2;
 }
 
 FloatRect Ball::getPosition()
@@ -126,7 +129,6 @@ void Ball::hitBotBrick()
 	vy = -vy;
 }
 
-
 void Ball::updatePosition()
 {
 	position.x = position.x + vx;
@@ -139,6 +141,7 @@ FloatRect Ball::getRectanglePositionBall()
 {
 	return ballShape.getGlobalBounds();
 }
+
 int Ball::move(int WIDTH, int HEIGHT, Paddle paddle2, RenderWindow& window)
 {
 	for (int i = 0; i < Brick.size(); i++)
@@ -148,61 +151,44 @@ int Ball::move(int WIDTH, int HEIGHT, Paddle paddle2, RenderWindow& window)
 			if (ballShape.getGlobalBounds().top <= Brick[i].getGlobalBounds().top)
 			{
 				hitLeftBrick();
-				Brick.erase(Brick.begin() + i);
-				for (int i = 0; i < Brick.size(); i++)
-				{
-					window.draw(Brick[i]);
+				if (Brick[i].getFillColor() == Color::Red) {
+					Brick[i].setFillColor(Color::Green);
+				}
+				else if (Brick[i].getFillColor() == Color::Green) {
+					Brick.erase(Brick.begin() + i);
 				}
 			}
 			else
 			{
 				hitBotBrick();
-				Brick.erase(Brick.begin() + i);
-				for (int i = 0; i < Brick.size(); i++)
-				{
-					window.draw(Brick[i]);
+				if (Brick[i].getFillColor() == Color::Red) {
+					Brick[i].setFillColor(Color::Green);
+				}
+				else if (Brick[i].getFillColor() == Color::Green) {
+					Brick.erase(Brick.begin() + i);
 				}
 			}
+			
 		}
 	}
-	if (getPosition().intersects(Gift1.getGlobalBounds()))
+	if (getPosition().intersects(Gift1.getGlobalBounds()) && selectedItem == 1)
 	{
-		//drawItemOnMap(window, Brick);
-		//iPos++;
 		// Item co chuc nang nhan x2 diem dang co
 		score *= 2;
-		selectedItem = rand() % 3 + 1;
-		setItem();
-
-	}
-
-	if (getPosition().intersects(Gift2.getGlobalBounds()))
-	{
-		//drawItemOnMap(window, Brick);
-		//iPos++;
-		// Item co chuc nang nhan x0.5 diem dang co
-		score *= 0.5;
-		selectedItem = rand() % 3 + 1;
 		setItem();
 	}
 
-	if (getPosition().intersects(Gift3.getGlobalBounds()))
+	if (getPosition().intersects(Gift2.getGlobalBounds()) && selectedItem == 2)
 	{
-		//drawItemOnMap(window, Brick);
-		//iPos++;
+
 		// Item co chuc nang tao ra 1 vat pham khong the bi pha huy
+		setImmortalBrick();
+		setItem();
+	}
 
-		RectangleShape brick;
-		Vector2f pos,size1;
-		ImmortalBrick.push_back(brick);
-		ImmortalBrick[test].setFillColor(Color::White);
-		size1 = Brick[rand() % Brick.size()].getSize();
-		ImmortalBrick[test].setSize(size1);
-		pos=Brick[rand() % Brick.size()].getPosition();
-		ImmortalBrick[test].setPosition(pos);
-		window.draw(ImmortalBrick[test]);
-		test++;
-		selectedItem = rand() % 3 + 1;
+	if (getPosition().intersects(Gift3.getGlobalBounds()) && selectedItem == 3)
+	{
+		score *= 0.5;
 		setItem();
 	}
 
@@ -234,6 +220,20 @@ int Ball::move(int WIDTH, int HEIGHT, Paddle paddle2, RenderWindow& window)
 		return 1;
 	}
 
+	for (int i = 0; i < ImmortalBrick.size(); i++)
+	{
+		if (getPosition().intersects(ImmortalBrick[i].getGlobalBounds()))
+		{
+			if (ballShape.getGlobalBounds().top <= ImmortalBrick[i].getGlobalBounds().top)
+			{
+				hitLeftBrick();
+			}
+			else
+			{
+				hitBotBrick();
+			}
+		}
+	}
 }
 
 void Ball::setSpeed()
@@ -307,6 +307,7 @@ bool Ball::isExistBrick(Vector2f position, vector<RectangleShape> Brick)
 
 void Ball::setItem()
 {
+	selectedItem = rand() % 3 + 1;
 	Vector2f positionGift = Vector2f(40 * (rand() % 10 + 1), 20 * (rand() % 10 + 1));
 	while (isExistBrick(positionGift, Brick)) {
 		positionGift = Vector2f(40 * (rand() % 10 + 1), 20 * (rand() % 10 + 1));
@@ -340,22 +341,38 @@ void Ball::drawItem(RenderWindow& window)
 	{
 		window.draw(Gift3);
 	}
-}
-
-void Ball::defaultItem(Vector2f position, RenderWindow& window)
-{
-	setItem();
-	Gift1.setPosition(position);
-	//window.draw(Gift1);
-}
-
-int Ball::drawItemOnMap(RenderWindow& window, vector<RectangleShape> Brick)
-{
-	//while (!isExistBrick(Vector2f(40 * (rand() % 10 + 1), 20 * (rand() % 10 + 1)), Brick))
+	for (int i = 0; i < Brick.size(); i++)
 	{
-		selectedItem = rand() % 3 + 1;
-		drawItem(window);
-		return 1 + rand() % 3;
+		window.draw(Brick[i]);
+	}
+	for (int i = 0; i < ImmortalBrick.size(); i++) {
+		window.draw(ImmortalBrick[i]);
 	}
 }
+
+bool Ball::isIntersectBrick(RectangleShape brick)
+{
+	for (int i = 0; i < Brick.size(); i++) {
+		if (brick.getGlobalBounds().intersects(Brick[i].getGlobalBounds())) {
+			return 1;
+		}
+	}
+	return 0;
+}
+
+void Ball::setImmortalBrick()
+{
+	RectangleShape brick;
+	brick.setSize(Vector2f(65, 20));
+	brick.setFillColor(Color::White);
+
+	Vector2f positionImmortalBrick = Vector2f(40 * (rand() % 10 + 1), 20 * (rand() % 10 + 1));
+	brick.setPosition(positionImmortalBrick);
+	while (isExistBrick(positionImmortalBrick, Brick) || isIntersectBrick(brick) == 1) {
+		brick.setPosition(positionImmortalBrick);
+		positionImmortalBrick = Vector2f(rand(), rand());
+	}
+	ImmortalBrick.push_back(brick);
+}
+
 
