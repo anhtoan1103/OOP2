@@ -1,12 +1,14 @@
 #pragma once
 #include "Header.h"
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 
 using namespace sf;
 
 extern char arr[];
 
 class Paddle;
+class DestructiveBrick;
 class Ball
 {
 private:
@@ -19,10 +21,13 @@ private:
 public:
 	vector <RectangleShape> Brick;
 	vector <RectangleShape> ImmortalBrick;
+	RectangleShape winBrick;
 	CircleShape Gift1;
 	CircleShape Gift2;
 	CircleShape Gift3;
+	CircleShape Gift4;
 	int selectedItem = 1;
+
 public:
 	Ball(float initX, float initY); //Khoi tao trai banh
 
@@ -56,20 +61,20 @@ public:
 
 	void updatePosition(); //Cap nhat vi tri banh
 
-	int move(int WIDTH, int HEIGH, Paddle paddle2, RenderWindow& window); //Di chuyen trai banh
+	int move(int WIDTH, int HEIGH, Paddle paddle2, RenderWindow& window, vector<DestructiveBrick> &VectorDestructiveBrick); //Di chuyen trai banh
 
 	int getScorePalyer2(); //Lay diem cua nguoi thu 2
 
 	void readFile(int& i, int& j, string file_name);
 
-	bool isExistBrick(Vector2f position, vector<RectangleShape> Brick);
+	void draw(RenderWindow& window);
+
+	bool isIntersectBrick(RectangleShape brick);
+	bool isIntersectBrick(CircleShape gift);
 
 	void setItem();
 
-	void drawItem(RenderWindow& window);
-
-	bool isIntersectBrick(RectangleShape brick);
-
 	void setImmortalBrick();
 
+	void setWinBrick();
 };

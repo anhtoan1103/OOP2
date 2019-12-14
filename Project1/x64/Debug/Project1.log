@@ -1,84 +1,14 @@
-﻿  Ball.cpp
-c:\users\asus\source\repos\oop2\project1\ball.h(15): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\asus\source\repos\oop2\project1\ball.h(16): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\asus\source\repos\oop2\project1\ball.cpp(6): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\asus\source\repos\oop2\project1\ball.cpp(19): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-c:\users\asus\source\repos\oop2\project1\ball.cpp(20): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-c:\users\asus\source\repos\oop2\project1\ball.cpp(29): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-c:\users\asus\source\repos\oop2\project1\ball.cpp(30): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-c:\users\asus\source\repos\oop2\project1\ball.cpp(191): warning C4244: '*=': conversion from 'double' to 'int', possible loss of data
-c:\users\asus\source\repos\oop2\project1\ball.cpp(243): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\asus\source\repos\oop2\project1\ball.cpp(247): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\asus\source\repos\oop2\project1\ball.cpp(251): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\asus\source\repos\oop2\project1\ball.cpp(255): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\asus\source\repos\oop2\project1\ball.cpp(278): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-c:\users\asus\source\repos\oop2\project1\ball.cpp(311): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-c:\users\asus\source\repos\oop2\project1\ball.cpp(313): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-c:\users\asus\source\repos\oop2\project1\ball.cpp(369): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-c:\users\asus\source\repos\oop2\project1\ball.cpp(373): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-  Master.cpp
-c:\users\asus\source\repos\oop2\project1\ball.h(15): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\asus\source\repos\oop2\project1\ball.h(16): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\asus\source\repos\oop2\project1\master.cpp(82): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-c:\users\asus\source\repos\oop2\project1\master.cpp(89): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\asus\source\repos\oop2\project1\master.cpp(91): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  Paddle.cpp
-c:\users\asus\source\repos\oop2\project1\ball.h(15): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\asus\source\repos\oop2\project1\ball.h(16): warning C4305: 'initializing': truncation from 'double' to 'float'
-  StarMenu.cpp
-c:\users\asus\source\repos\oop2\project1\ball.h(15): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\asus\source\repos\oop2\project1\ball.h(16): warning C4305: 'initializing': truncation from 'double' to 'float'
-  StringNamePlayer.cpp
-c:\users\asus\source\repos\oop2\project1\ball.h(15): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\asus\source\repos\oop2\project1\ball.h(16): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\asus\source\repos\oop2\project1\stringnameplayer.cpp(43): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
+﻿  DestructiveBrick.cpp
+c:\users\asus\source\repos\oop2\project1\ball.h(17): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\asus\source\repos\oop2\project1\ball.h(18): warning C4305: 'initializing': truncation from 'double' to 'float'
   WindowPlayGame.cpp
-c:\users\asus\source\repos\oop2\project1\ball.h(15): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\asus\source\repos\oop2\project1\ball.h(16): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\asus\source\repos\oop2\project1\windowplaygame.cpp(14): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  main.cpp
-c:\users\asus\source\repos\oop2\project1\ball.h(15): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\asus\source\repos\oop2\project1\ball.h(16): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\asus\source\repos\oop2\project1\ball.h(17): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\asus\source\repos\oop2\project1\ball.h(18): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\asus\source\repos\oop2\project1\windowplaygame.cpp(15): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\asus\source\repos\oop2\project1\windowplaygame.cpp(84): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\asus\source\repos\oop2\project1\windowplaygame.cpp(140): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\asus\source\repos\oop2\project1\windowplaygame.cpp(198): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Generating Code...
-c:\users\asus\source\repos\oop2\project1\ball.cpp(237): warning C4715: 'Ball::move': not all control paths return a value
+c:\users\asus\source\repos\oop2\project1\windowplaygame.cpp(244): warning C4715: 'WindowPlayGame::autoPlay': not all control paths return a value
+c:\users\asus\source\repos\oop2\project1\windowplaygame.cpp(130): warning C4715: 'WindowPlayGame::playGameOnePlayer': not all control paths return a value
   Project1.vcxproj -> C:\Users\ASUS\source\repos\OOP2\x64\Debug\Project1.exe

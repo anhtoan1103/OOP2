@@ -27,4 +27,6 @@ public:
 	void update(); //ham cap nhat trang thai cua thanh
 
 	void autoMove(int Top, int Bot, Ball ball); //Ham tu choi cua BOT
+
+	void setPaddleSpeed(float speed);
 };

@@ -3,7 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "Header.h"
 using namespace sf;
-#define OBJECTS 3 
+#define OBJECTS 4
 
 class StarMenu
 {

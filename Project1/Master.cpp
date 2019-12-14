@@ -49,55 +49,63 @@ void Master::processGame()
 							string kq = player.fillNameOnePlayer(flag);
 							if (flag)
 							{
-							WindowPlayGame playGame;
-							vector <string> winer = playGame.playGameOnePlayer(kq);
-							playGame.Winer(winer);
+								WindowPlayGame playGame;
+								vector <string> winer = playGame.playGameOnePlayer(kq);
+								playGame.Winer(winer);
 							}
 							break;
 						}
-						case 1:
+						case 1: 
 						{
+							beginWindow.close();
+							WindowPlayGame playGame;
+							vector <string> winer = playGame.autoPlay();
+							playGame.Winer(winer);
+							break;
+						}
+						case 2:
+						{
+
 							beginWindow.close();
 							ifstream file;
 							file.open("highScore.txt");
-							string name[20], score[20];
-							int i = 0;
+							string name[100];
+							int point[100];
+							int index = 0;
 							while (!file.eof())
 							{
-								file >> name[i] >> score[i];
-								i++;
+								file >> name[index] >> point[index];
+								index++;
 							}
 							file.close();
+							for (int i = 0; i < index - 1; i++) {
+								for (int j = i + 1; j < index; j++) {
+									if (point[j] > point[i]) {
+										swap(point[i], point[j]);
+										swap(name[i], name[j]);
+									}
+								}
+							}
 							Texture* A = new Texture;
-							RectangleShape background;
 							Font font_title; //font Tieu de
 							Text title; //Tieu de	
 							Font font;
-							RectangleShape box[50];
-							Text text[50];
+							Text text[200];
+							RectangleShape background;
+
 							A->loadFromFile("background.jpg");
 							background.setTexture(A);
 							A->setSmooth(true);
 							background.setPosition(Vector2f(0, 0));
 							background.setSize(Vector2f(WIDTH, HEIGHT));
-							RenderWindow window(VideoMode(WIDTH, HEIGHT), "Pong Game");
+
 							font.loadFromFile("OCRAEXT.TTF");
-							for (int j = 0; j < i; j++)
-							{
-							
-							text[j].setFont(font);
-							text[j].setPosition(425, 355+j*29);
-							text[j].setCharacterSize(30);
-							text[j].setString(name[j] + createString(10-name[j].length()) + score[j] + "\n");
-							}
-							window.draw(background);
-							for (int j = 0; j < i; j++)
-							{
-								window.draw(box[j]);
-								window.draw(text[j]);
-							}
-							window.display();
-							
+							title.setString("HIGHSCORE");
+							title.setPosition(Vector2f(475, 80));
+							title.setCharacterSize(100);
+							title.setFont(font);
+
+							RenderWindow window(VideoMode(WIDTH, HEIGHT), "Pong Game");
 							while (window.isOpen())
 							{
 								while (window.pollEvent(event))
@@ -124,12 +132,25 @@ void Master::processGame()
 										}
 									}
 								}
+								window.draw(background);
+								window.draw(title);
+								for (int j = 0; j < index; j++)
+								{
+									text[j].setFont(font);
+									text[j].setPosition(500, 255 + j * 60);
+									text[j].setCharacterSize(30);
+									text[j].setString(to_string(j + 1) + "st" + "       " +name[j] + 
+										": " + to_string(point[j]) + "\n");
+								}
+								for (int j = 0; j < index; j++)
+								{
+									window.draw(text[j]);
+								}
+								window.display();
 							}
-							
 							break;
 						}
-		
-						case 2:
+						case 3:
 							beginWindow.close();
 							break;
 						}

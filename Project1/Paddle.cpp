@@ -65,3 +65,8 @@ void Paddle::autoMove(int left, int right, Ball ball)
 		moveLeft(left);
 	}*/
 }
+
+void Paddle::setPaddleSpeed(float speed)
+{
+	PaddleSpeed = speed;
+}

@@ -124,8 +124,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Ball.cpp" />
-    <ClCompile Include="Brick.cpp" />
     <ClCompile Include="Button.cpp" />
+    <ClCompile Include="DestructiveBrick.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Master.cpp" />
     <ClCompile Include="Paddle.cpp" />
@@ -136,9 +136,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ball.h" />
-    <ClInclude Include="Brick.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="Constants.h" />
+    <ClInclude Include="DestructiveBrick.h" />
     <ClInclude Include="Header.h" />
     <ClInclude Include="Master.h" />
     <ClInclude Include="Object.h" />

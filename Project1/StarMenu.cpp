@@ -23,17 +23,20 @@ StarMenu::StarMenu()
 	text[0].setCharacterSize(30);
 	text[0].setString("> PLAY");
 
-	text[1].setFont(font);
-	text[1].setPosition(625, 343);
-	text[1].setCharacterSize(30);
-	text[1].setString("HIGH SCORES");
-
 	text[2].setFont(font);
-	text[2].setPosition(625, 425);
+	text[2].setPosition(625, 429);
 	text[2].setCharacterSize(30);
-	text[2].setString("QUIT");
+	text[2].setString("HIGH SCORES");
 
-	
+	text[3].setFont(font);
+	text[3].setPosition(625, 511);
+	text[3].setCharacterSize(30);
+	text[3].setString("QUIT");
+
+	text[1].setFont(font);
+	text[1].setPosition(635, 347);
+	text[1].setCharacterSize(30);
+	text[1].setString("AUTO PLAY");;
 
 	selectItem = 0; 
 }

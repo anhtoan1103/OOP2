@@ -19,7 +19,7 @@ using namespace std;
 #include "TextBox.h"
 #include "WindowPlayGame.h"
 #include "Master.h"
-#include "Brick.h"
+#include "DestructiveBrick.h"
 #include "Object.h"
 #include "Constants.h"
 

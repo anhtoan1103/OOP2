@@ -17,10 +17,9 @@ private:
 	Font font_name; 
 	int count;
 public:
-
-
 	vector <string> playGameOnePlayer(string name); 
 
-	void Winer(vector <string> name);
+	vector<string> autoPlay();
 
+	void Winer(vector <string> name);
 };
